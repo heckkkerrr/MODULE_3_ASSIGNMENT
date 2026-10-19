@@ -1,0 +1,2 @@
+import java.io.*;
+public class StreamExamples { public static void main(String[] a)throws Exception{try(FileOutputStream out=new FileOutputStream("output.txt")){out.write("Java I/O Streams Example".getBytes());}try(FileInputStream in=new FileInputStream("output.txt")){int c;while((c=in.read())!=-1)System.out.print((char)c);}System.out.println();try(BufferedWriter w=new BufferedWriter(new FileWriter("example.txt"))){w.write("Buffered character stream");}try(BufferedReader r=new BufferedReader(new FileReader("example.txt"))){System.out.println(r.readLine());}}}

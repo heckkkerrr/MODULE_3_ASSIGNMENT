@@ -1,0 +1,2 @@
+import java.util.concurrent.locks.*;
+public class LockExamples { static class Counter { int value; final Lock lock=new ReentrantLock(); void add(){lock.lock();try{value++;}finally{lock.unlock();}} } public static void main(String[] a)throws Exception{Counter c=new Counter();Thread[] ts=new Thread[4];for(int i=0;i<4;i++){ts[i]=new Thread(()->{for(int j=0;j<1000;j++)c.add();});ts[i].start();}for(Thread t:ts)t.join();System.out.println("Locked count="+c.value);}}

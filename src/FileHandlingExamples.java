@@ -1,0 +1,2 @@
+import java.io.*; import java.nio.file.*;
+public class FileHandlingExamples { public static void main(String[] a)throws Exception{File f=new File("sample.txt");if(!f.exists())f.createNewFile();System.out.println("exists="+f.exists());try(FileWriter w=new FileWriter(f)){w.write("abcdef");}Files.copy(f.toPath(),Path.of("copy.txt"),StandardCopyOption.REPLACE_EXISTING);try(RandomAccessFile r=new RandomAccessFile(f,"rw")){r.seek(2);r.write("XY".getBytes());}System.out.println("files="+new File(".").listFiles().length);}}

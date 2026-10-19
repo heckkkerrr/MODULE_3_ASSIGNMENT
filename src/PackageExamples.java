@@ -1,0 +1,2 @@
+import java.util.*; import java.util.regex.*;
+public class PackageExamples { public static void main(String[] a){System.out.println(Math.abs(-5)+" "+Math.pow(2,3)+" "+Math.random());System.out.println(new Date());Calendar c=Calendar.getInstance();System.out.println(c.get(Calendar.YEAR));String email="student@example.com";System.out.println(Pattern.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$",email));}}
